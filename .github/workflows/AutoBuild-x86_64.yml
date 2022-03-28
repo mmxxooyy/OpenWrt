@@ -9,6 +9,12 @@ name: x86_64
 
 on:
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version'
+        required: false
+        default: ''
 
 ### 环境变量
 env:
