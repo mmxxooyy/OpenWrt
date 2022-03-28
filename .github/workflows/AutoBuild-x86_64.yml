@@ -1,6 +1,7 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 # Based on: https://github.com/P3TERX/Actions-OpenWrt
+# Blog: https://p3terx.com
 # Author: Eva
 #=================================================
 
@@ -8,7 +9,6 @@ name: x86_64
 
 on:
   repository_dispatch:
-  workflow_dispatch:
 
 ### 环境变量
 env:
