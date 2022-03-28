@@ -9,24 +9,32 @@ name: x86_64
 on:
   repository_dispatch:
   workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
 
+### 环境变量
 env:
+  # 源码仓库地址
   REPO_URL: https://github.com/coolsnowwolf/lede
+  # 源码分支
   REPO_BRANCH: master
+  # feeds.conf 文件位置
   FEEDS_CONF: feeds.conf.default
+  # 编译时调用的 [.config] 文件名称
   CONFIG_FILE: .config
+  # 自定义脚本,更新与安装 feeds 前执行
   DIY_P1_SH: diy-part1.sh
+  # 自定义脚本，更新与安装 feeds 后执行
   DIY_P2_SH: diy-part2.sh
+  # 是否上传 bin 文件夹
   UPLOAD_BIN_DIR: false
+  # 是否上传固件
   UPLOAD_FIRMWARE: true
+  # 是否上传固件到奶牛快传
   UPLOAD_COWTRANSFER: false
+  # 是否上传固件到 WeTransfer
   UPLOAD_WETRANSFER: false
+  # 是否上传固件到 Releases 页面
   UPLOAD_RELEASE: false
+  # 时区
   TZ: Asia/Shanghai
 
 jobs:
